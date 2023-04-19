@@ -25,6 +25,11 @@
             <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
             href="{{route('hp.practicante')}}"
             >Practicantes</a>
+
+            <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
+            href=""
+            >Control de Horas</a>
+
         </div>
 
         </div>

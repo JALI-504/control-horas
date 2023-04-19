@@ -1,11 +1,12 @@
 <div>
     <div class="d-flex">
-      <div class="">
+      <div class=" me-4">
         <h1>PRACTICANTES</h1>
       </div>
       <div>
-        <a class="btn btn-success mt-1 ml-2" style="ali" href="{{route('hp.create')}}">Crear</a>
-        <button wire:click="cerrarSession">Cerrar sesion</button>
+        <a class="btn btn-outline-success mt-2 ml-4
+          " 
+         href="{{route('hp.create')}}">Crear</a>
       </div>
     </div>
       

@@ -16,8 +16,14 @@
     @livewireStyles
 </head>
 <body>
+    <header>
+        @livewire('nav-bar')
+    </header>
+
     <main>
+
         @yield('content')
+
     </main>
     @livewireScripts
 </body>

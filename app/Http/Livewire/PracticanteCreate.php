@@ -3,11 +3,11 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Practicante;
+use App\Models\User;
 
 class PracticanteCreate extends Component
 {
-    public $Practicante;
+    public $User;
     public $edit = false;
 
     public $nombre="";
@@ -51,13 +51,13 @@ class PracticanteCreate extends Component
         if ($id != null) {
             $this->edit = true;
 
-            $this->Practicante = Practicante::find($id);
+            $this->User = User::find($id);
 
-            $this->nombre= $this->Practicante->nombre;
-            $this->telefono=$this->Practicante->tel;
-            $this->email=$this->Practicante->email;
-            $this->residencia=$this->Practicante->residencia;
-            $this->carrera=$this->Practicante->carrera;
+            $this->nombre= $this->User->name;
+            $this->telefono=$this->User->tel;
+            $this->email=$this->User->email;
+            $this->residencia=$this->User->residencia;
+            $this->carrera=$this->User->carrera;
         }
 
     }
@@ -75,16 +75,16 @@ class PracticanteCreate extends Component
 
         if ($this->edit == true) {
 
-            $this->Practicante->nombre = $this->nombre;
-            $this->Practicante->tel = $this->telefono;
-            $this->Practicante->email = $this->email;
-            $this->Practicante->residencia = $this->residencia;
-            $this->Practicante->carrera = $this->carrera;
+            $this->User->nombre = $this->nombre;
+            $this->User->tel = $this->telefono;
+            $this->User->email = $this->email;
+            $this->User->residencia = $this->residencia;
+            $this->User->carrera = $this->carrera;
 
-            $this->Practicante->save();
+            $this->User->save();
 
         }else {
-            $Practicante = Practicante::create([
+            $Practicante = User::create([
                 'nombre' => $this->nombre,
                 'tel' => $this->telefono,
                 'email' => $this->email,

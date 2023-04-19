@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Practicante;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +13,7 @@ class Practicantes extends Component
         public function render()
         {
             return view('livewire.practicantes', [
-                'practicantes' => Practicante::all()
+                'practicantes' => User::all()
             ])
             ->extends('layouts.layout')
             ->section('content');
@@ -23,21 +23,11 @@ class Practicantes extends Component
             
             // dd($id);
     
-            $Practicante = Practicante::find($id);
+            $Practicante = User::find($id);
             
             $Practicante->delete();
     
             return redirect()->route('hp.practicante');
-        }
-
-        public function cerrarSession(Request $request){
-            Auth::logout();
-        
-            $request->session()->invalidate();
-        
-            $request->session()->regenerateToken();
-
-            return redirect('login');
         }
     }
     
