@@ -15,12 +15,15 @@ class CreateHorasTable extends Migration
     {
         Schema::create('horas', function (Blueprint $table) {
             $table->id();
-            $table->string('fecha');
-            $table->string('hora_inicio');
-            $table->string('hora_final');
-            $table->string('hora_total');
-            
+            $table->unsignedInteger('user_id')->constrained('User')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->date('fecha');
+            $table->time('hora_inicio');
+            $table->time('hora_final');
+            $table->time('hora_total');            
             $table->timestamps();
+            
         });
     }
 

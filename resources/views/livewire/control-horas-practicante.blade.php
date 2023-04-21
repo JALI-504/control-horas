@@ -27,7 +27,7 @@
             >Practicantes</a>
 
             <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
-            href=""
+            href="{{route('hp.hora')}}"
             >Control de Horas</a>
 
         </div>

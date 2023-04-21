@@ -60,7 +60,7 @@
                     <button type="button" class="btn btn-success align-self-center" style="align-content  :center " wire:click="guardar">{{$this->edit == true ? "Actualizar" : "Guardar"}}</button>
                   </div>
                   <div class="btn-group me-2" role="group" aria-label="Second group">
-                    <a type="button" class="btn btn-danger align-self-center" style="align-content:center" href="{{route("hp.practicante")}}">Cancelar </a>
+                    <a type="button" class="btn btn-danger align-self-center" style="align-content:center" href="{{route('hp.practicante')}}">Cancelar </a>
                   </div>
                                
                 </div>

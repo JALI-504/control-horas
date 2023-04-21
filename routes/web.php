@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ControlHorasPracticante;
+use App\Http\Livewire\Horas;
 use App\Http\Livewire\Practicantes;
 use App\Http\Livewire\PracticanteCreate;
+use App\Http\Livewire\HorasCreate;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -33,7 +35,10 @@ Route::prefix('practicantes')->group(function () {
     Route::get('index', Practicantes::class)->name('hp.practicante')->middleware('auth');
     Route::get('create', PracticanteCreate::class)->name('hp.create')->middleware('auth');
     Route::get('update/{id}', PracticanteCreate::class)->name('hp.update')->middleware('auth');
-    
-    Route::get('horas', Practicantes::class)->name('hp.horas')->middleware('auth');
 });
 
+Route::prefix('horas')->group(function () {
+    Route::get('index', Horas::class)->name('hp.hora')->middleware('auth');
+    Route::get('create', HorasCreate::class)->name('hp.hora_create')->middleware('auth');
+    Route::get('update/{id}', HorasCreate::class)->name('hp.Hora_update')->middleware('auth');
+});
