@@ -40,5 +40,5 @@ Route::prefix('practicantes')->group(function () {
 Route::prefix('horas')->group(function () {
     Route::get('index', Horas::class)->name('hp.hora')->middleware('auth');
     Route::get('create', HorasCreate::class)->name('hp.hora_create')->middleware('auth');
-    Route::get('update/{id}', HorasCreate::class)->name('hp.Hora_update')->middleware('auth');
+    Route::get('update/{id}', HorasCreate::class)->name('hp.hora_update')->middleware('auth');
 });

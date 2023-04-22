@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use App\Http\Livewire\UsersTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

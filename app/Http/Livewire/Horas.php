@@ -9,6 +9,7 @@ use Livewire\Component;
 class Horas extends Component
 {
     public $total_horas;
+    public $total;
     
     public function render()
     {
@@ -28,6 +29,11 @@ class Horas extends Component
         $Hora->delete();
 
         return redirect()->route('hp.hora');
+    }
+
+    public function sumatotal(){
+        $this->total = Hora::table('horas')
+        ->sum('total_horas');
     }
 }
 

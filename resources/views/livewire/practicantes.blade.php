@@ -10,7 +10,7 @@
       </div>
     </div>
       
-    <table class="table table-dark table-sm">
+    {{-- <table class="table table-dark table-sm align-middle">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -62,6 +62,7 @@
           </tr>
           @endforeach
         </tbody>
-    </table>
+    </table> --}}
+    <livewire:user-table />
   </div>
   
