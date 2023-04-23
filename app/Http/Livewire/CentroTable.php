@@ -55,11 +55,12 @@ class CentroTable extends DataTableComponent
                         }),
                     LinkColumn::make('delete')
                         ->title(fn ($row) => 'Eliminar ' . $row->name)
-                        ->location(fn ($row) => route('hp.centro_update', $row->id))
+                        ->location(fn ($row) => route('hp.centro', $row->id))
                         ->attributes(function ($row) {
                             return [
-                                'target' => '_blank',
                                 'class' => 'btn btn-danger text-blue-500 hover:no-underline',
+                                'wire:click' => 'delete(' . $row->id . ')',
+                                
                             ];
                         }),
                 ]),

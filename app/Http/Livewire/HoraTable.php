@@ -53,11 +53,10 @@ class HoraTable extends DataTableComponent
                             ];
                         }),
                     LinkColumn::make('delete')
-                        ->title(fn ($row) => 'Eliminar ' . $row->name)
+                        ->title(fn ($row) => 'Eliminar ')
                         ->location(fn ($row) => route('hp.hora_update', $row->id))
                         ->attributes(function ($row) {
                             return [
-                                'target' => '_blank',
                                 'class' => 'btn btn-danger text-blue-500 hover:no-underline',
                             ];
                         }),

@@ -17,7 +17,7 @@ class CentrosCreate extends Component
     protected $rules = [
         'nombre_centro' => 'required', 
         'facultad' => 'required',
-        'carrera$carrera' => 'required',
+        'carrera' => 'required',
     ];
 
     protected $messages = [
@@ -66,7 +66,7 @@ class CentrosCreate extends Component
                 'user_id' => Auth()->user()->id,
                 'nombre_centro' => $this->nombre_centro,
                 'facultad' => $this->facultad,
-                'carrera$carrera' => $this->carrera,
+                'carrera' => $this->carrera,
             ]);
 
         }
