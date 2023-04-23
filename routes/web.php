@@ -8,6 +8,9 @@ use App\Http\Livewire\Horas;
 use App\Http\Livewire\HorasCreate;
 use App\Http\Livewire\Centros;
 use App\Http\Livewire\CentrosCreate;
+use App\Http\Livewire\Supervisores;
+use App\Models\Supervisor;
+// use App\Http\Livewire\CentrosCreate;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -49,4 +52,10 @@ Route::prefix('centros')->group(function () {
     Route::get('index', Centros::class)->name('hp.centro')->middleware('auth');
     Route::get('create', CentrosCreate::class)->name('hp.centro_create')->middleware('auth');
     Route::get('update/{id}', CentrosCreate::class)->name('hp.centro_update')->middleware('auth');
+});
+
+Route::prefix('supervisores')->group(function () {
+    Route::get('index', Supervisores::class)->name('hp.sup')->middleware('auth');
+    Route::get('create', SupervisoresCreate::class)->name('hp.sup_create')->middleware('auth');
+    Route::get('update/{id}', SupervisoresCreate::class)->name('hp.sup_update')->middleware('auth');
 });

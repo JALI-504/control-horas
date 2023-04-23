@@ -33,6 +33,10 @@
             href="{{route('hp.centro')}}"
             >Centros Educativos</a>
 
+            <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
+            href="{{route('hp.sup')}}"
+            >Centros Educativos</a>
+
         </div>
 
         </div>
