@@ -21,6 +21,9 @@ class ControlHorasPracticante extends Component
 {
     return redirect()->route('hp.practicante');
 }
-
-    
+//     public function listaCentros($id)
+// {
+//     return redirect()->route('hp.centro');
+// }
+  
 }

@@ -18,7 +18,7 @@ class CreateCentrosTable extends Migration
             $table->unsignedInteger('user_id')->constrained('User')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->string('nomcre_centro');
+            $table->string('nombre_centro');
             $table->string('facultad');
             $table->string('carrera');            
             $table->timestamps();

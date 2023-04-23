@@ -12,8 +12,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-
                     
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="align-self-center">
@@ -29,6 +27,11 @@
             <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
             href="{{route('hp.hora')}}"
             >Control de Horas</a>
+
+
+            <a type="button" class="btn btn-outline-primary align-self-center" style="align-content:center" 
+            href="{{route('hp.centro')}}"
+            >Centros Educativos</a>
 
         </div>
 

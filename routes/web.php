@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ControlHorasPracticante;
-use App\Http\Livewire\Horas;
 use App\Http\Livewire\Practicantes;
 use App\Http\Livewire\PracticanteCreate;
+use App\Http\Livewire\Horas;
 use App\Http\Livewire\HorasCreate;
+use App\Http\Livewire\Centros;
+use App\Http\Livewire\CentrosCreate;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -41,4 +43,10 @@ Route::prefix('horas')->group(function () {
     Route::get('index', Horas::class)->name('hp.hora')->middleware('auth');
     Route::get('create', HorasCreate::class)->name('hp.hora_create')->middleware('auth');
     Route::get('update/{id}', HorasCreate::class)->name('hp.hora_update')->middleware('auth');
+});
+
+Route::prefix('centros')->group(function () {
+    Route::get('index', Centros::class)->name('hp.centro')->middleware('auth');
+    Route::get('create', CentrosCreate::class)->name('hp.centro_create')->middleware('auth');
+    Route::get('update/{id}', CentrosCreate::class)->name('hp.centro_update')->middleware('auth');
 });

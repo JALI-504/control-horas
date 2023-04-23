@@ -19,7 +19,6 @@ class CreatePracticantesTable extends Migration
             $table->string('tel');
             $table->string('email');
             $table->string('residencia');
-            $table->string('carrera');
             $table->timestamps();
         });
     }

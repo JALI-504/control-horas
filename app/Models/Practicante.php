@@ -13,7 +13,6 @@ class Practicante extends Model
         'nombre',
         'tel',
         'email',
-        'residencia',
-        'carrera'
-    ];
+        'residencia'
+        ];
 }

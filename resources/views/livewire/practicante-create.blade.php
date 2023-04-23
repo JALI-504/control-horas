@@ -43,16 +43,6 @@
                     @enderror
 
                   </div>
-
-                  <div class="form-group">
-                    <label for="carrera">Carrera</label>
-                    <input type="carrera" class="form-control @error("carrera") is-invalid @enderror" id="carrera" wire:model.lazy="carrera">
-
-                    @error("carrera")
-                      <small class="text-danger">{{$message}}</small>
-                    @enderror
-
-                  </div>
                 
                 <div class="d-flex justify-content-center align-items-center" role="toolbar" aria-label="Toolbar with button groups" style="height: 20vh;">
                   

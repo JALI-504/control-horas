@@ -14,14 +14,13 @@ class PracticanteCreate extends Component
     public $telefono="";
     public $email="";
     public $residencia="";
-    public $carrera="";
+  
 
     protected $rules = [
         'nombre' => 'required|min:5|max:50', 
         'telefono' => 'required|numeric|min:8',
         'email' => 'required|email',
         'residencia' => 'required|min:5|max:250',
-        'carrera' => 'required|min:5|max:250',
     ];
 
     protected $messages = [
@@ -40,10 +39,6 @@ class PracticanteCreate extends Component
         'residencia.min' => 'Debe ser menor de 8 caracteres.',
         'residencia.max' => 'Debe de ser mayor de 250 caracteres.',
 
-        'carrera.required' => 'Este campo debe deser oblicatorio.',
-        'carrera.min' => 'Debe ser menor de 8 caracteres.',
-        'carrera.max' => 'Debe de ser mayor de 250 caracteres.',
-      
     ];
 
     
@@ -57,7 +52,6 @@ class PracticanteCreate extends Component
             $this->telefono=$this->User->tel;
             $this->email=$this->User->email;
             $this->residencia=$this->User->residencia;
-            $this->carrera=$this->User->carrera;
         }
 
     }
@@ -79,7 +73,6 @@ class PracticanteCreate extends Component
             $this->User->tel = $this->telefono;
             $this->User->email = $this->email;
             $this->User->residencia = $this->residencia;
-            $this->User->carrera = $this->carrera;
 
             $this->User->save();
 
@@ -89,7 +82,6 @@ class PracticanteCreate extends Component
                 'tel' => $this->telefono,
                 'email' => $this->email,
                 'residencia' => $this->residencia,
-                'carrera' => $this->carrera,
             ]);
         }
 

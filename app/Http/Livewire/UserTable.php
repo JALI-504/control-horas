@@ -29,12 +29,12 @@ class UserTable extends DataTableComponent
                 ->sortable(),
             Column::make("Residencia", "residencia")
                 ->sortable(),
-            Column::make("Carrera", "carrera")
-                ->sortable(),
             Column::make("Created at", "created_at")
-                ->sortable(),
+                ->sortable()
+                ->deselected(),
             Column::make("Updated at", "updated_at")
-                ->sortable(),
+                ->sortable()
+                ->deselected(),
         ];
     }
 }
