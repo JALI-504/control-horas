@@ -14,6 +14,12 @@ class PracticanteCreate extends Component
     public $telefono="";
     public $email="";
     public $residencia="";
+
+    public $label;
+    public $placeholder;
+    public $icon;
+    public $rightIcon;
+    public $iconSize;
   
 
     protected $rules = [
@@ -59,6 +65,15 @@ class PracticanteCreate extends Component
     public function render()
     {
         return view('livewire.Practicante-create')
+
+        // return view('livewire.x-input', [
+        //     'label' => $this->label,
+        //     'placeholder' => $this->placeholder,
+        //     'icon' => $this->icon,
+        //     'rightIcon' => $this->rightIcon,
+        //        'iconSize' => $this->iconSize,
+        // ])
+
         ->extends('layouts.layout')
         ->section('content');
     }

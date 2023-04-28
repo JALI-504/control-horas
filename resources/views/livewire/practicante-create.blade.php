@@ -43,7 +43,15 @@
                     @enderror
 
                   </div>
-                
+
+                  {{-- <form wire:submit.prevent="save">
+                    <input type="file" wire:model="photo">
+                 
+                    @error('photo') <span class="error">{{ $message }}</span> @enderror
+                 
+                    <button type="submit">Save Photo</button>
+                </form>
+                 --}}
                 <div class="d-flex justify-content-center align-items-center" role="toolbar" aria-label="Toolbar with button groups" style="height: 20vh;">
                   
                   <div class="btn-group me-2" role="group" aria-label="First group">

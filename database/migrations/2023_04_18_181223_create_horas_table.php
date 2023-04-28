@@ -15,7 +15,7 @@ class CreateHorasTable extends Migration
     {
         Schema::create('horas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id')->constrained('User')
+            $table->unsignedInteger('user_id')->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->date('fecha');

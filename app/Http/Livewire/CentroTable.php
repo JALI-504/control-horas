@@ -12,6 +12,31 @@ class CentroTable extends DataTableComponent
 {
     protected $model = Centro::class;
 
+    public array $bulkActions = [
+        'deleteSelected' => 'Eliminar',
+    ];
+
+    public array $alerta = [];
+
+    public function deleteSelected(){
+        if (count($this->getSelected()) > 0) {
+            Centro::destroy($this->getSelected());
+    
+            // Actualiza la variable $alerta para mostrar la alerta
+            foreach ($this->getSelected() as $id) {
+                $this->alerta[$id] = 'El centro se eliminó correctamente.';
+            }
+        }
+    }
+
+
+    // public function deleteSelected(){
+    //     if (count($this->getSelected()) > 0) {
+
+    //         Centro::destroy($this->getSelected());
+    //     }
+    // }
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
@@ -31,6 +56,8 @@ class CentroTable extends DataTableComponent
                 ->sortable(),
                 Column::make("carrera")
                 ->sortable(), 
+
+                
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),
@@ -52,17 +79,16 @@ class CentroTable extends DataTableComponent
                             return [
                                 'class' => 'btn btn-warning text-blue-500 hover:no-underline',
                             ];
-                        }),
-                    LinkColumn::make('delete')
-                        ->title(fn ($row) => 'Eliminar ' . $row->name)
-                        ->location(fn ($row) => route('hp.centro', $row->id))
-                        ->attributes(function ($row) {
-                            return [
-                                'class' => 'btn btn-danger text-blue-500 hover:no-underline',
-                                'wire:click' => 'delete(' . $row->id . ')',
-                                
-                            ];
-                        }),
+                        })->html(),
+                        // Column::make('Borrar')->format(function ($value, $column, $row) {
+
+                        //     return '<button class="btn btn-sm btn-danger"
+                        //             data-toggle="modal"
+                        //             wire:click.prevent="delete(' . $row->id . ')"
+                        //             data-target="#modalEliminarSolicitud">
+                        //             <i class="fas fa-trash"></i>Borrar</button>';
+                                   
+                        // })->html(),
                 ]),
 
         ];

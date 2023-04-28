@@ -34,7 +34,6 @@
 
                 </div>
 
-                
                 <div class="d-flex justify-content-center align-items-center" role="toolbar" aria-label="Toolbar with button groups" style="height: 20vh;">
                   
                   <div class="btn-group me-2" role="group" aria-label="First group">

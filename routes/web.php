@@ -9,8 +9,8 @@ use App\Http\Livewire\HorasCreate;
 use App\Http\Livewire\Centros;
 use App\Http\Livewire\CentrosCreate;
 use App\Http\Livewire\Supervisores;
-use App\Models\Supervisor;
-// use App\Http\Livewire\CentrosCreate;
+use App\Http\Livewire\SupervisorsCreate;
+use App\Http\Livewire\Constancias;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -56,6 +56,8 @@ Route::prefix('centros')->group(function () {
 
 Route::prefix('supervisores')->group(function () {
     Route::get('index', Supervisores::class)->name('hp.sup')->middleware('auth');
-    Route::get('create', SupervisoresCreate::class)->name('hp.sup_create')->middleware('auth');
-    Route::get('update/{id}', SupervisoresCreate::class)->name('hp.sup_update')->middleware('auth');
+    Route::get('create', SupervisorsCreate::class)->name('hp.sup_create')->middleware('auth');
+    Route::get('update/{id}', SupervisorsCreate::class)->name('hp.sup_update')->middleware('auth');
 });
+
+Route::get('imprimir', Constancias::class)->name('hp.contacia')->middleware('auth');

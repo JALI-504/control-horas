@@ -52,4 +52,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function centro(){
+        return $this->belongsTo(Centro::class, 'centro_id', 'id');
+    }
+    public function supervisor(){
+        return $this->belongsTo(Supervisor::class, 'supervisor_id', 'id');
+    }
 }

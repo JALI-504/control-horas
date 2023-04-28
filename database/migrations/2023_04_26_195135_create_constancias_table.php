@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCentrosTable extends Migration
+class CreateConstanciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class CreateCentrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('centros', function (Blueprint $table) {
+        Schema::create('constancias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id')->constrained('users')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-            $table->string('nombre_centro');
-            $table->string('facultad');
-            $table->string('carrera');            
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ class CreateCentrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('centros');
+        Schema::dropIfExists('constancias');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 
@@ -25,5 +26,14 @@ class ControlHorasPracticante extends Component
 // {
 //     return redirect()->route('hp.centro');
 // }
+
+public function indereportx()
+{
+    $users = User::all();
+    
+    $pdf = Pdf::loadView('users.report', compact('users'));
+
+    return $pdf->download('invoice.pdf');
+}
   
 }

@@ -1,7 +1,7 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
 
-    <div class="d-flex">
+    <div class="d-flex">  
         <div class=" me-4">
           <h1>SUPERVISOR</h1>
         </div>

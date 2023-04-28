@@ -2,15 +2,15 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Centro;
+use App\Models\Supervisor;
 use Livewire\Component;
 
 class Supervisores extends Component
 {
     public function render()
     {
-        return view('livewire.centros', [
-            'centros' => Centro::all()
+        return view('livewire.supervisores', [
+            'supervisors' =>Supervisor::all()
         ])
         ->extends('layouts.layout')
         ->section('content');
@@ -20,11 +20,11 @@ class Supervisores extends Component
         
         // dd($id);
 
-        $Centro = Centro::find($id);
+        $Supervisor = Supervisor::find($id);
         
-        $Centro->delete();
+        $Supervisor->delete();
 
-        return redirect()->route('hp.centro');
+        return redirect()->route('hp.sup');
     }
 }
 

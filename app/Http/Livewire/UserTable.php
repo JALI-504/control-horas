@@ -14,9 +14,23 @@ class UserTable extends DataTableComponent
 {
     protected $model = User::class;
 
+    public array $bulkActions = [
+        'deleteSelected' => 'Eliminar',
+    ];
+
+    public function deleteSelected(){
+        if (count($this->getSelected()) > 0) {
+
+            User::destroy($this->getSelected());
+        }
+
+    }
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+        $this->setColumnSelectStatus(true);
+
     }
 
     public function columns(): array
@@ -58,16 +72,15 @@ class UserTable extends DataTableComponent
                                 'class' => 'btn btn-warning text-blue-500 hover:no-underline',
                             ];
                         }),
-                    LinkColumn::make('delete')
-                        ->title(fn ($row) => 'Eliminar ')
-                        ->location(fn ($row) => route('hp.practicante', $row->id))
-                        ->attributes(function ($row) {
-                            return [
-                                'class' => 'btn btn-danger text-blue-500 hover:no-underline',
-                                'wire:click' => 'delete(' . $row->id . ')',
-                                
-                            ];
-                        }),
+                        Column::make('Borrar')->format(function ($value, $column, $row) {
+
+                            return '<button class="btn btn-sm btn-danger"
+                                    data-toggle="modal"
+                                    wire:click.prevent="delete(' . $row->id . ')"
+                                    data-target="#modalEliminarSolicitud">
+                                    <i class="fas fa-trash"></i>Borrar</button>';
+                                   
+                        })->html(),
                 ]),
         ];
     }

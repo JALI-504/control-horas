@@ -13,6 +13,19 @@ class HoraTable extends DataTableComponent
 {
     protected $model = Hora::class;
 
+    public array $bulkActions = [
+        'deleteSelected' => 'Eliminar',
+    ];
+
+    public function deleteSelected(){
+        if (count($this->getSelected()) > 0) {
+
+            Hora::destroy($this->getSelected());
+        }
+
+    }
+
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
@@ -52,14 +65,15 @@ class HoraTable extends DataTableComponent
                                 'class' => 'btn btn-warning text-blue-500 hover:no-underline',
                             ];
                         }),
-                    LinkColumn::make('delete')
-                        ->title(fn ($row) => 'Eliminar ')
-                        ->location(fn ($row) => route('hp.hora_update', $row->id))
-                        ->attributes(function ($row) {
-                            return [
-                                'class' => 'btn btn-danger text-blue-500 hover:no-underline',
-                            ];
-                        }),
+                        Column::make('Borrar')->format(function ($value, $column, $row) {
+
+                            return '<button class="btn btn-sm btn-danger"
+                                    data-toggle="modal"
+                                    wire:click.prevent="delete(' . $row->id . ')"
+                                    data-target="#modalEliminarSolicitud">
+                                    <i class="fas fa-trash"></i>Borrar</button>';
+                                   
+                        })->html(),
                 ]),
         ];
     }
