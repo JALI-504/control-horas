@@ -41,7 +41,9 @@ class UserTable extends DataTableComponent
                 ->deselected(),
             Column::make("Nombre", "name")
                 ->sortable(),
-            // Column::make("Carrera", "centro.carrera")
+            Column::make("No. Cuenta", "cuenta")
+                ->sortable(),
+            // Column::make("Carrera", "carrera.carrera")
             //     ->sortable()
             //     ->searchable(),
             Column::make("Telefono", "tel")

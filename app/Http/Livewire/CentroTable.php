@@ -19,23 +19,24 @@ class CentroTable extends DataTableComponent
     public array $alerta = [];
 
     public function deleteSelected(){
-        if (count($this->getSelected()) > 0) {
-            Centro::destroy($this->getSelected());
-    
-            // Actualiza la variable $alerta para mostrar la alerta
-            foreach ($this->getSelected() as $id) {
-                $this->alerta[$id] = 'El centro se eliminó correctamente.';
-            }
-        }
-    }
+
+        Centro::destroy($this->getSelected());
+     
+      }
+  
 
 
     // public function deleteSelected(){
     //     if (count($this->getSelected()) > 0) {
-
     //         Centro::destroy($this->getSelected());
+    
+    //         // Actualiza la variable $alerta para mostrar la alerta
+    //         foreach ($this->getSelected() as $id) {
+    //             $this->alerta[$id] = 'El centro se eliminó correctamente.';
+    //         }
     //     }
     // }
+
 
     public function configure(): void
     {
@@ -50,14 +51,8 @@ class CentroTable extends DataTableComponent
             Column::make("Id", "id")
                 ->sortable()
                 ->deselected(),                
-                Column::make("nombre_centro")
-                ->sortable(),
-                Column::make("facultad")
-                ->sortable(),
-                Column::make("carrera")
-                ->sortable(), 
-
-                
+            Column::make("nombre_centro")
+                ->sortable(),   
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),

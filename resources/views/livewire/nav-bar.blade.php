@@ -5,6 +5,7 @@
             <a class="navbar-brand" href="{{route("hp.practicante")}}">PRACTICANTE</a>
             <a class="navbar-brand" href="{{route("hp.hora")}}">HORAS</a>
             <a class="navbar-brand" href="{{route("hp.centro")}}">CENTROS</a>
+            <a class="navbar-brand" href="{{route("hp.carrera")}}">CARRERAS</a>
             <a class="navbar-brand" href="{{route("hp.sup")}}">SUPERVISORES</a>
             
 

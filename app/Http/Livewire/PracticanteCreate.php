@@ -11,6 +11,7 @@ class PracticanteCreate extends Component
     public $edit = false;
 
     public $nombre="";
+    public $cuenta="";
     public $telefono="";
     public $email="";
     public $residencia="";
@@ -24,7 +25,8 @@ class PracticanteCreate extends Component
 
     protected $rules = [
         'nombre' => 'required|min:5|max:50', 
-        'telefono' => 'required|numeric|min:8',
+        'cuenta' => 'required|numeric|min:11|max:11', 
+        'telefono' => 'required|numeric|min:8|max:8',
         'email' => 'required|email',
         'residencia' => 'required|min:5|max:250',
     ];
@@ -33,6 +35,11 @@ class PracticanteCreate extends Component
         'nombre.required' => 'Este campo debe deser oblicatorio.',
         'nombre.min' => 'El nombre no debe ser menor de 8 caracteres.',
         'nombre.max' => 'El nombre no debe de ser mayor de 50 caracteres.',
+
+        'cuenta.required' => 'Este campo debe deser oblicatorio.',
+        'cuenta.numeric' => 'Este campo solo acepta numeros',
+        'cuenta.min' => 'El nombre no debe ser menor de 11 caracteres.',
+        'cuenta.max' => 'El nombre no debe de ser mayor de 11 caracteres.',
 
         'telefono.required' => 'Este campo debe de ser obligatorio.',
         'telefono.min' => 'El telefono no debe ser menor de 8 numeros.',
@@ -55,6 +62,7 @@ class PracticanteCreate extends Component
             $this->User = User::find($id);
 
             $this->nombre= $this->User->name;
+            $this->cuenta= $this->User->cuenta;
             $this->telefono=$this->User->tel;
             $this->email=$this->User->email;
             $this->residencia=$this->User->residencia;
@@ -85,6 +93,7 @@ class PracticanteCreate extends Component
         if ($this->edit == true) {
 
             $this->User->nombre = $this->nombre;
+            $this->User->cuenta = $this->cuenta;
             $this->User->tel = $this->telefono;
             $this->User->email = $this->email;
             $this->User->residencia = $this->residencia;
@@ -94,6 +103,7 @@ class PracticanteCreate extends Component
         }else {
             $Practicante = User::create([
                 'nombre' => $this->nombre,
+                'cuenta' => $this->cuenta,
                 'tel' => $this->telefono,
                 'email' => $this->email,
                 'residencia' => $this->residencia,

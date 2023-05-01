@@ -26,6 +26,21 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="cuenta" class="col-md-4 col-form-label text-md-end">{{ __('No. Cuenta') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cuenta" type="text" class="form-control @error('cuenta') is-invalid @enderror" name="cuenta" value="{{ old('cuenta') }}" required autocomplete="cuenta" autofocus>
+
+                                @error('cuenta')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
                             <label for="tel" class="col-md-4 col-form-label text-md-end">{{ __('Teléfono') }}</label>
 
                             <div class="col-md-6">
@@ -38,20 +53,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        {{-- <div class="row mb-3">
-                            <label for="carrera" class="col-md-4 col-form-label text-md-end">{{ __('Carrera') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="carrera" type="text" class="form-control @error('carrera') is-invalid @enderror" name="carrera" value="{{ old('carrera') }}" required autocomplete="carrera" autofocus>
-
-                                @error('carrera')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
 
                         <div class="row mb-3">
                             <label for="residencia" class="col-md-4 col-form-label text-md-end">{{ __('Residencia') }}</label>

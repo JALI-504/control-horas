@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Centro;
-use Livewire\Component;
-use App\Models\Supervisor;
 
+use Livewire\Component;
+
+use App\Models\Centro;
+use App\Models\Carrera;
+use App\Models\Supervisor;
 
 class SupervisorsCreate extends Component
 {
@@ -16,6 +18,7 @@ class SupervisorsCreate extends Component
     public $telefono="";
     public $email="";
     public $centro="";
+    public $carrera="";
   
 
     protected $rules = [
@@ -54,7 +57,8 @@ class SupervisorsCreate extends Component
     public function render()
     {
         return view('livewire.supervisors-create', [
-            'centros' => Centro::all()
+            'centros' => Centro::all(),
+            'carreras' => Carrera::all()
         ])
         ->extends('layouts.layout')
         ->section('content');
@@ -75,6 +79,7 @@ class SupervisorsCreate extends Component
         }else {
             $supervisor = Supervisor::create([
                 'centro_id' => $this->centro,
+                'carrera_id' => $this->carrera,
                 'user_id' => Auth()->user()->id,
                 'nombre_sup' => $this->nombre_sup,
                 'tel' => $this->telefono,

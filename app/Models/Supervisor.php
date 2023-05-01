@@ -15,6 +15,7 @@ class Supervisor extends Model
         'tel',
         'email',
         'centro_id',
+        'carrera_id',
     ];
 
     public function user(){
@@ -23,7 +24,7 @@ class Supervisor extends Model
     public function centro(){
         return $this->belongsTo(Centro::class, 'centro_id', 'id');
     }
-
-   
-    
+    public function carrera(){
+        return $this->belongsTo(Carrera::class, 'carrera_id', 'id');
+    }    
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupervisorsTable extends Migration
+class CreateCarrerasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,15 @@ class CreateSupervisorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('supervisors', function (Blueprint $table) {
+        Schema::create('carreras', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id')->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unsignedInteger('centro_id')->constrained('centro')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-            $table->unsignedInteger('carrera_id')->constrained('carrera')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-            $table->string('nombre_sup');
-            $table->string('tel');
-            $table->string('email')->unique();
-            
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('carrera');
             $table->timestamps();
         });
     }
@@ -39,6 +33,6 @@ class CreateSupervisorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supervisors');
+        Schema::dropIfExists('carreras');
     }
 }

@@ -35,6 +35,8 @@
 
                 </div>
 
+                {{-- Sellec para centro --}}
+
                 <div class="form-group">
                   <label for="centro">Centro</label>
                   <select class="form-select" aria-label="Default select example" wire:model="centro">
@@ -50,7 +52,23 @@
 
                 </div>
 
-                
+                {{-- Select para  carreras --}}
+
+                <div class="form-group">
+                  <label for="carrera">Carreras</label>
+                  <select class="form-select" aria-label="Default select example" wire:model="carrera">
+                    <option selected>Seleccione</option>
+                    @foreach ($carreras as $carrera)
+                      <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                    @endforeach
+                  </select>
+
+                  @error("carrera")
+                    <small class="text-danger">{{$message}}</small>
+                  @enderror
+
+                </div>
+
                 <div class="d-flex justify-content-center align-items-center" role="toolbar" aria-label="Toolbar with button groups" style="height: 20vh;">
                   
                   <div class="btn-group me-2" role="group" aria-label="First group">

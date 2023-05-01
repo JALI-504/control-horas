@@ -11,19 +11,15 @@ class CentrosCreate extends Component
     public $Centro;
     public $edit = false;
     public $nombre_centro="";
-    public $facultad="";
-    public $carrera="";
+
     
     protected $rules = [
         'nombre_centro' => 'required', 
-        'facultad' => 'required',
-        'carrera' => 'required',
     ];
 
     protected $messages = [
         'nombre_centro.required' => 'Este campo debe deser oblicatorio.',
-        'facultad.required' => 'Este campo debe de ser obligatorio.',
-        'carrera.required' => 'Este campo debe de ser obligatorio.',
+       
     ];
 
     
@@ -34,15 +30,14 @@ class CentrosCreate extends Component
             $this->Centro = Centro::find($id);
 
             $this->nombre_centro= $this->Centro->nombre_centro;
-            $this->facultad=$this->Centro->facultad;
-            $this->carrera=$this->Centro->carrera;
+           
         }
 
     }
 
     public function render()
     {
-        return view('livewire.Centros-create')
+        return view('livewire.centros-create')
         ->extends('layouts.layout')
         ->section('content');
 
@@ -56,17 +51,14 @@ class CentrosCreate extends Component
         if ($this->edit == true) {
 
             $this->Centro->nombre_centro = $this->nombre_centro;
-            $this->Centro->facultad = $this->facultad;
-            $this->Centro->carrera = $this->carrera;
+          
 
             $this->Centro->save();
 
         }else {
             $Centro = Centro::create([
                 'user_id' => Auth()->user()->id,
-                'nombre_centro' => $this->nombre_centro,
-                'facultad' => $this->facultad,
-                'carrera' => $this->carrera,
+                'nombre_centro' => $this->nombre_centro               
             ]);
 
         }

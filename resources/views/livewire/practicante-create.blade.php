@@ -12,11 +12,22 @@
                     @enderror
 
                   </div>
+
+                <div class="form-group">
+                    <label for="cuenta">No. Cuenta</label>
+                    <input type="text" class="form-control @error("cuenta") is-invalid @enderror" id="cuenta" wire:model.lazy="cuenta">
+
+                    @error("cuenta")
+                      <small class="text-danger">{{$message}}</small>
+                    @enderror
+
+                  </div>
+
                   <div class="form-group">
                     <label for="telefono">Telefono</label>
                     <input type="tel" class="form-control @error("telefono") is-invalid @enderror"
                     maxlength="8"
-                    max="99999999"
+                    max="8"
                     id="telefono" wire:model.lazy="telefono">
 
                     @error("telefono")

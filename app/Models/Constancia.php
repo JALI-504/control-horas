@@ -12,6 +12,7 @@ class Constancia extends Model
     protected $fillable = [
         'user_id',
         'centro_id',
+        'carrera_id',
         'supervisor_id'
         
     ];
@@ -22,6 +23,9 @@ class Constancia extends Model
     
     public function centro(){
         return $this->belongsTo(Centro::class, 'centro_id', 'id');
+    }
+    public function carrera(){
+        return $this->belongsTo(Centro::class, 'carrera_id', 'id');
     }
 
     public function supervisor(){

@@ -1,5 +1,4 @@
-<div>
-    {{-- The Master doesn't talk, he acts. --}}
+<div>       
 
     <div class="d-flex">  
         <div class=" me-4">

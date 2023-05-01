@@ -16,9 +16,9 @@ class Constancias extends Component
     ->section('content');
 }
 
-public function imprimir(){
-    $today = Carbon::now()->format('d/m/Y');
-    $pdf = \PDF::loadView('constnacias', compact('today'));
-    return $pdf->download('constancias.pdf');
-  }
+// public function imprimir(){
+//     $today = Carbon::now()->format('d/m/Y');
+//     $pdf = \PDF::loadView('constnacias', compact('today'));
+//     return $pdf->download('constancias.pdf');
+//   }
 }

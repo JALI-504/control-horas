@@ -7,51 +7,29 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 
-
-use App\Models\Supervisor;
+use App\Models\Carrera;
 use WireUi\Traits\Actions;
 
-class SupervisorTable extends DataTableComponent
+class CarreraTable extends DataTableComponent
 {
-    use Actions;
-    protected $model = Supervisor::class;
 
-    public array $bulkActions = [
+    use Actions; 
+    protected $model = Carrera::class;
+
+     public array $bulkActions = [
         'deleteSelected' => 'Eliminar',
     ];
 
-    public function deleteSelected(){
+       public function deleteSelected(){
 
-      Supervisor::destroy($this->getSelected());
-
-    //     if (count($this->getSelected()) > 0) {
-
-    //         Supervisor::destroy($this->getSelected());
-
-    //               // or use a full syntax
-    //         $this->notification([
-    //             'title'       => 'Profile saved!',
-    //             'description' => 'Borrado exitosamente',
-    //             'icon'        => 'success'
-    //         ]);
-
-    //     }else{
-    //                 // or use a full syntax
-    //          $this->notification([
-    //         'title'       => 'oops!',
-    //         'description' => 'seleccione una fila',
-    //         'icon'        => 'success'
-    //     ]);
-            
-    //     }
+         Carrera::destroy($this->getSelected());
     
-    }
+         }
 
     public function configure(): void
     {
         $this->setPrimaryKey('id');
-        $this->setColumnSelectStatus(true);
-
+         $this->setColumnSelectStatus(true);
     }
 
     public function columns(): array
@@ -60,14 +38,8 @@ class SupervisorTable extends DataTableComponent
             Column::make("Id", "id")
                 ->sortable()
                 ->deselected(),
-            Column::make("Nombre", "nombre_sup")
+            Column::make("Nombre de la Carrera", "carrera")
                 ->sortable(),
-            Column::make("Telefono", "tel")
-                ->sortable(),
-            Column::make("Email","email")
-                ->sortable(), 
-            // Column::make("Carrera","carrera.carrera")
-            //     ->sortable(), 
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),
@@ -84,7 +56,7 @@ class SupervisorTable extends DataTableComponent
                 ->buttons([
                     LinkColumn::make('edit') // make() has no effect in this case but needs to be set anyway
                         ->title(fn ($row) => 'Editar ' . $row->name)
-                        ->location(fn ($row) => route('hp.sup_update', $row->id))
+                        ->location(fn ($row) => route('hp.carrera_update', $row->id))
                         ->attributes(function ($row) {
                             return [
                                 'class' => 'btn btn-warning text-blue-500 hover:no-underline',
@@ -100,7 +72,6 @@ class SupervisorTable extends DataTableComponent
                                
                     })->html(),
                 ]),
-
         ];
     }
 }

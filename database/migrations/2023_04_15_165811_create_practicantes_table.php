@@ -16,6 +16,7 @@ class CreatePracticantesTable extends Migration
         Schema::create('practicantes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('cuenta');
             $table->string('tel');
             $table->string('email');
             $table->string('residencia');

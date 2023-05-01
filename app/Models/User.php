@@ -24,6 +24,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name',
+        'cuenta',
         'tel',
         'email',
         'password',
@@ -58,5 +59,8 @@ class User extends Authenticatable
     }
     public function supervisor(){
         return $this->belongsTo(Supervisor::class, 'supervisor_id', 'id');
+    }
+    public function carrera(){
+        return $this->belongsTo(Supervisor::class, 'carrera_id', 'id');
     }
 }

@@ -94,7 +94,8 @@
                 },
                 "laravel": {
                     "providers": [
-                        "Barryvdh\\DomPDF\\ServiceProvider"
+                        "Barryvdh\\DomPDF\\ServiceProvider",
+                        
                     ],
                     "aliases": {
                         "Pdf": "Barryvdh\\DomPDF\\Facade\\Pdf",

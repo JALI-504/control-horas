@@ -11,6 +11,7 @@ class Practicante extends Model
 
     protected $fillable = [
         'nombre',
+        'cuenta',
         'tel',
         'email',
         'residencia'

@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="align-self-center">
 
-          <h1>RRegistro de Centros</h1>
+          <h1>Registro de Centros</h1>
             <form>
                 <div class="form-group">
                     <label for="nombre_centro">Nombre del Centro</label>
@@ -14,26 +14,8 @@
                     @enderror
 
                   </div>
-                  <div class="form-group">
-                    <label for="facultad">Facultad</label>
-                    <input type="text" class="form-control @error("facultad") is-invalid @enderror"
-                    id="facultad" wire:model.lazy="facultad">
 
-                    @error("facultad")
-                    <small class="text-danger">{{$message}}</small>
-                    @enderror
-
-                  </div>
-                <div class="form-group">
-                  <label for="carrera">Carrera</label>
-                  <input type="text" class="form-control @error("carrera") is-invalid @enderror" id="carrera"  wire:model.lazy="carrera">
-
-                  @error("carrera")
-                  <small class="text-danger">{{$message}}</small>
-                    @enderror
-
-                </div>
-
+                
                 <div class="d-flex justify-content-center align-items-center" role="toolbar" aria-label="Toolbar with button groups" style="height: 20vh;">
                   
                   <div class="btn-group me-2" role="group" aria-label="First group">
