@@ -22,30 +22,9 @@ class SupervisorTable extends DataTableComponent
 
     public function deleteSelected(){
 
-      Supervisor::destroy($this->getSelected());
-
-    //     if (count($this->getSelected()) > 0) {
-
-    //         Supervisor::destroy($this->getSelected());
-
-    //               // or use a full syntax
-    //         $this->notification([
-    //             'title'       => 'Profile saved!',
-    //             'description' => 'Borrado exitosamente',
-    //             'icon'        => 'success'
-    //         ]);
-
-    //     }else{
-    //                 // or use a full syntax
-    //          $this->notification([
-    //         'title'       => 'oops!',
-    //         'description' => 'seleccione una fila',
-    //         'icon'        => 'success'
-    //     ]);
-            
-    //     }
-    
-    }
+        Supervisor::destroy($this->getSelected());
+     
+      }
 
     public function configure(): void
     {
@@ -66,8 +45,10 @@ class SupervisorTable extends DataTableComponent
                 ->sortable(),
             Column::make("Email","email")
                 ->sortable(), 
-            // Column::make("Carrera","carrera.carrera")
-            //     ->sortable(), 
+            Column::make("Centro Educativo","Centro.nombre_centro")
+                 ->sortable(), 
+            Column::make("Carrera","Carrera.carrera")
+                 ->sortable(), 
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),

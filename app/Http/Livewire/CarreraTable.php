@@ -40,6 +40,8 @@ class CarreraTable extends DataTableComponent
                 ->deselected(),
             Column::make("Nombre de la Carrera", "carrera")
                 ->sortable(),
+            Column::make("Nombre del Centro", "Centro.nombre_centro")
+                ->sortable(),
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),

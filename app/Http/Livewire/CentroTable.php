@@ -7,9 +7,11 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 use App\Models\Centro;
+use WireUi\Traits\Actions;
 
 class CentroTable extends DataTableComponent
 {
+    use Actions;
     protected $model = Centro::class;
 
     public array $bulkActions = [
@@ -51,8 +53,10 @@ class CentroTable extends DataTableComponent
             Column::make("Id", "id")
                 ->sortable()
                 ->deselected(),                
-            Column::make("nombre_centro")
+            Column::make("Nombre del Centro", "nombre_centro")
                 ->sortable(),   
+            // Column::make("Nombre de la Carrera", "Carrera.carrera")
+            //     ->sortable(),   
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->deselected(),

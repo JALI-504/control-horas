@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+
+
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use HasRoles;
 
 
     /**
@@ -61,6 +65,6 @@ class User extends Authenticatable
         return $this->belongsTo(Supervisor::class, 'supervisor_id', 'id');
     }
     public function carrera(){
-        return $this->belongsTo(Supervisor::class, 'carrera_id', 'id');
+        return $this->belongsTo(Carrera::class, 'carrera_id', 'id');
     }
 }

@@ -5,9 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
-
-
-
+use Carbon\Carbon;
 
 class ControlHorasPracticante extends Component
 {
@@ -30,10 +28,10 @@ class ControlHorasPracticante extends Component
 public function indereportx()
 {
     $users = User::all();
-    
-    $pdf = Pdf::loadView('users.report', compact('users'));
-
-    return $pdf->download('invoice.pdf');
+   
+    $today = Carbon::now()->format('d/m/Y');
+    $pdf = PDF::loadView('constnacias', compact('today'));
+    return $pdf->download('constancias.pdf');
 }
   
 }

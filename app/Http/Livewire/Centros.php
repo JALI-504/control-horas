@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+
 use App\Models\Centro;
 use WireUi\Traits\Actions;
 
@@ -27,21 +28,7 @@ class Centros extends Component
         
         $Centro->delete();
 
-        $this->notification()->confirm([
-            'title'       => '¿Seguro desea Eliminar el Centro Educativo?',
-            'description' => '¿Borrar Centro Educativo?',
-            'icon'        => 'question',
-            'accept'      => [
-                'label'  => 'Si, Borrar',
-                'method' => 'delete',
-                'params' => 'Borrando',
-            ],
-            'reject' => [
-                'label'  => 'No, cancelar',
-                'method' => 'cancel',
-            ],
-        ]);
-
+        
         return redirect()->route('hp.centro');
 
 

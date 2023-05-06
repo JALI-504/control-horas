@@ -27,4 +27,7 @@ class Supervisor extends Model
     public function carrera(){
         return $this->belongsTo(Carrera::class, 'carrera_id', 'id');
     }    
+    public function constancia(){
+        return $this->belongsTo(constancia::class, 'constancia_id', 'id');
+    }    
 }

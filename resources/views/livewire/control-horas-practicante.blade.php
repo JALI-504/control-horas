@@ -57,6 +57,9 @@
 
             <H1>CONTROL HORAS PRACTICANTE</H1>
 
+            <a href="{{ route('hp.contacia')}}"I>Imprimir PDF</a>
+
+
            
         </div>
 

@@ -11,7 +11,7 @@ class Centro extends Model
 
     protected $fillable = [
         'user_id',
-        'supervisor_id',
+        'carrera_id',
         'nombre_centro',
     ];
 
@@ -19,8 +19,12 @@ class Centro extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function supervisor(){
-        return $this->belongsTo(Supervisor::class, 'supervisor_id', 'id');
+    public function carreras(){
+        return $this->belongsTo(Carrera::class, 'carrera_id', 'id');
+    }
+
+    public function constancia(){
+        return $this->belongsTo(Constancia::class, 'constancia_id', 'id');
     }
 
 }
