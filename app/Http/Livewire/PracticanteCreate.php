@@ -107,7 +107,7 @@ class PracticanteCreate extends Component
                 'tel' => $this->telefono,
                 'email' => $this->email,
                 'residencia' => $this->residencia,
-            ])->assignRole('Admin');
+            ]);
         }
 
         return redirect()->route('hp.practicante');

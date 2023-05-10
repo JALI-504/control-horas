@@ -15,6 +15,7 @@ use App\Http\Livewire\CarrerasCreate;
 use App\Http\Livewire\Constancias;
 use Illuminate\Support\Facades\Auth;
 
+
 Auth::routes([
     'register' => true,
 ]);
