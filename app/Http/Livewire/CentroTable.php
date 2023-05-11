@@ -63,6 +63,7 @@ class CentroTable extends DataTableComponent
             Column::make("Updated at", "updated_at")
                 ->sortable()
                 ->deselected(),
+                
 
                 ButtonGroupColumn::make('Actions')
                 ->attributes(function ($row) {
@@ -77,6 +78,14 @@ class CentroTable extends DataTableComponent
                         ->attributes(function ($row) {
                             return [
                                 'class' => 'btn btn-warning text-blue-500 hover:no-underline',
+                            ];
+                        })->html(),
+                        LinkColumn::make('borrar') // make() has no effect in this case but needs to be set anyway
+                        ->title(fn ($row) => 'Borrar ' . $row->name)
+                        ->location(fn ($row) => route('hp.centro', $row->id))
+                        ->attributes(function ($row) {
+                            return [
+                                'class' => 'btn btn-danger text-blue-500 hover:no-underline',
                             ];
                         })->html(),
                         // Column::make('Borrar')->format(function ($value, $column, $row) {

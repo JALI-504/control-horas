@@ -13,6 +13,7 @@ use App\Http\Livewire\SupervisorsCreate;
 use App\Http\Livewire\Carreras;
 use App\Http\Livewire\CarrerasCreate;
 use App\Http\Livewire\Constancias;
+use App\Http\Livewire\Roles;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -54,3 +55,5 @@ Route::prefix('carreras')->group(function () {
 });
 
 Route::get('imprimir', Constancias::class)->name('hp.contacia')->middleware('auth');
+
+Route::get('roles', Roles::class)->name('hp.roles')->middleware('auth');

@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Http\Livewire\UsersTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+
 
 class Practicantes extends Component
 {

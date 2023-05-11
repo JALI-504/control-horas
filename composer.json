@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "laravelcollective/html": "^6.4",
         "livewire/livewire": "^2.12",
         "nesbot/carbon": "^2.66",
         "rappasoft/laravel-livewire-tables": "^2.12",
@@ -20,6 +21,7 @@
         "wireui/wireui": "^0.17.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.7",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
